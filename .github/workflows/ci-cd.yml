@@ -1,10 +1,7 @@
-name: Node.js CI/CD
+name: CI/CD Pipeline
 
 on:
   push:
-    branches:
-      - main
-  pull_request:
     branches:
       - main
 
@@ -24,16 +21,8 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Run tests
-        run: npm test
-
       - name: Build project
         run: npm run build
 
-      - name: Deploy (Optional)
-        run: |
-          echo "Deploying your app..."
-          # Thêm lệnh deploy của bạn ở đây (nếu có)
-
-      - name: Finish
-        run: echo "✅ CI/CD completed!"
+      - name: Run tests
+        run: npm test
